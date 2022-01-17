@@ -22,7 +22,7 @@ async function main() {
         validatoraddress,
     )) as ValidatorRegistry;
 
-    // generate random owner address
+    // get beneficiary from config or generate a random address 
     const beneficiary: string = process.env.SCRIPTS_BENEFICIARY || computeAddress(new SigningKey(randomBytes(32)).privateKey);
     console.log(`Beneficiary: ${beneficiary}`)
 
